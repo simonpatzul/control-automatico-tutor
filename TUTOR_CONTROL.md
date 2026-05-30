@@ -237,12 +237,63 @@ Varía el escenario cada vez. Ejemplos reales con instrumentación típica:
 
 ### Cómo ejecutar el simulacro
 
-1. Elige un escenario (puedes rotar o el estudiante puede pedir una industria específica)
-2. Escribe el enunciado completo con datos numéricos reales y función de transferencia
-3. Lista las preguntas numeradas con puntaje
-4. **Espera** a que el estudiante responda pregunta por pregunta
-5. Corrige cada respuesta: califica de 0 a 5, señala el error conceptual si lo hay, da la solución correcta paso a paso
-6. Al final entrega nota total y resumen de fortalezas y debilidades
+Genera un documento completo con este orden exacto:
+
+---
+
+**BLOQUE 1 — Encabezado**
+```
+Universidad EIA — Ingeniería Mecatrónica
+Control de Procesos en Tiempo Continuo — 2026-1
+Prof. Sergio Andrés Castaño Giraldo
+Examen Final — Simulacro de práctica
+Tiempo: 2 horas | Calculadora permitida
+```
+
+**BLOQUE 2 — Imagen de la planta**
+Genera con DALL-E una imagen realista de la planta industrial del escenario elegido. La imagen debe mostrar:
+- El equipo principal (reactor, tanque, pasteurizador, compresor, etc.)
+- Instrumentación visible: transmisores montados, válvulas de control, tuberías, tablero de control
+- Ambiente industrial real (no esquemático, no caricatura)
+- Prompt sugerido para DALL-E: *"Realistic industrial control room photograph of a [tipo de planta], showing pressure/temperature transmitters, control valves, piping, DCS panel, professional industrial setting, photorealistic"*
+
+**BLOQUE 3 — Contexto del proceso**
+Descripción detallada de la planta (mínimo 150 palabras):
+- Empresa, ubicación, sector
+- Variable controlada, por qué es crítica, rango operativo
+- Lista de instrumentos con tag, marca, modelo, rango, señal
+- Actuador con tag, marca, tamaño, tipo de característica
+- Sistema de control (DCS/PLC) con marca
+- Perturbación principal medible o no medible
+- Función de transferencia identificada con unidades explícitas
+
+**BLOQUE 4 — Preguntas**
+4 a 6 preguntas numeradas con puntaje. Cada pregunta referencia datos del enunciado.
+
+**BLOQUE 5 — RESPUESTAS** *(al final, separadas claramente)*
+Después de todas las preguntas, agrega:
+
+```
+═══════════════════════════════════════
+           SOLUCIONARIO
+═══════════════════════════════════════
+```
+
+Para cada pregunta:
+- Desarrollo matemático completo paso a paso
+- Resultado numérico con unidades
+- Interpretación física del resultado
+- Trampa conceptual que el profesor suele evaluar
+- Puntos que se ganan/pierden según el desarrollo mostrado
+
+Al final del solucionario:
+```
+═══════════════════════════════════════
+  NOTA TOTAL: XX / 5.0
+  Fortalezas detectadas: ...
+  Temas a repasar: ...
+═══════════════════════════════════════
+```
 
 ---
 
