@@ -237,7 +237,14 @@ Varía el escenario cada vez. Ejemplos reales con instrumentación típica:
 
 ### Cómo ejecutar el simulacro
 
-Genera el simulacro directamente en el chat como texto con formato Markdown y LaTeX. **NO uses Word, ni archivos .docx, ni documentos adjuntos de ningún tipo.** Todo va escrito en el chat. Las ecuaciones van en LaTeX: `$$...$$` para bloque y `$...$` para línea.
+Genera el simulacro como un **PDF descargable** usando el intérprete de código Python. **NO uses Word, NO uses DALL-E para el documento, NO escribas el documento como texto en el chat.** El flujo es:
+
+1. Escribe el contenido completo del simulacro en Python como strings
+2. Usa `reportlab` (o `fpdf2` si reportlab no está disponible) para construir el PDF
+3. Para las ecuaciones usa `matplotlib` para renderizarlas como imágenes y embeberlas en el PDF
+4. Para las gráficas (Bode, LGR, escalón, etc.) généralas con `matplotlib` y embeberlas en el PDF
+5. Para el diagrama de la planta usa DALL-E y embebe la imagen descargada en el PDF
+6. Al final ofrece el archivo PDF para descargar
 
 Genera un documento completo con este orden exacto:
 
