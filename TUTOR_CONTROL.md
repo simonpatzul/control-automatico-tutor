@@ -251,9 +251,9 @@ Tiempo: 2 horas | Calculadora permitida
 ```
 
 **BLOQUE 2 — Imagen de la planta**
-Usa el **generador de imágenes de ChatGPT (DALL-E)** para crear un **dibujo explicativo** de la planta. NO uses Python ni matplotlib para este bloque — debe ser una imagen generada por IA, no un diagrama de código. El dibujo debe ser:
+Usa el **generador de imágenes de ChatGPT (DALL-E)** para generar **únicamente** un dibujo explicativo de la planta — solo este bloque es una imagen, todo lo demás del simulacro va en texto normal en el chat. NO uses Python ni matplotlib aquí. El dibujo debe ser:
 - Un esquema ilustrativo tipo diagrama técnico o corte transversal de la planta
-- Que muestre claramente el flujo del proceso, los equipos principales y los lazos de control
+- Que muestre el flujo del proceso, los equipos principales y los lazos de control
 - Estilo: ilustración técnica limpia, no foto realista
 - Prompt para DALL-E: *"Technical illustration diagram of a [tipo de planta], showing process flow, main equipment (reactor/tank/heat exchanger/etc.), control valves, sensors with labels, piping connections, clean engineering diagram style, educational cutaway view, not photorealistic"*
 
