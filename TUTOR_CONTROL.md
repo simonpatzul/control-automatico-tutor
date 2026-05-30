@@ -270,8 +270,45 @@ Descripción detallada de la planta (mínimo 150 palabras):
 **BLOQUE 4 — Preguntas**
 4 a 6 preguntas numeradas con puntaje. Cada pregunta referencia datos del enunciado.
 
-**BLOQUE 5 — RESPUESTAS** *(al final, separadas claramente)*
-Después de todas las preguntas, agrega:
+**BLOQUE 5 — GRÁFICAS** *(genera todas las que sean relevantes para el escenario)*
+
+Usa el intérprete de código (Python + matplotlib + control) para generar las gráficas que el examen podría pedir. No te limites: incluye todas las que aporten al análisis. Ejemplos:
+
+- **Mapa de polos y ceros** de G(s) en lazo abierto — marca polos con × y ceros con ○, indica si hay fase no mínima o integradores
+- **Diagrama de Bode** (magnitud en dB y fase en grados) — señala la frecuencia de cruce de ganancia, margen de ganancia y margen de fase
+- **Lugar geométrico de las raíces** — marca polos en lazo abierto, asíntotas, punto de operación elegido
+- **Respuesta al escalón unitario en lazo abierto** — muestra ganancia estática, constante de tiempo, tiempo muerto
+- **Respuesta al escalón unitario en lazo cerrado** — muestra sobrepico, tiempo de establecimiento, error en estado estacionario
+- **Diagrama de Nyquist** — cuando se evalúe estabilidad por márgenes
+- **Respuesta a perturbación escalón** — lazo cerrado con y sin feedforward si aplica
+- **Lugar de raíces con compensador diseñado** — antes y después del compensador superpuestos
+- **Comparación lazo abierto vs cerrado** en un mismo plot cuando sea ilustrativo
+- **Diagrama de bloques ASCII** del sistema de control propuesto (estructura cascada, feedforward, Smith, etc.)
+
+Para cada gráfica generada:
+1. Muestra el código Python usado (limpio y comentado)
+2. Debajo de la gráfica explica qué se observa y qué significado físico tiene
+3. Conecta lo que se ve en la gráfica con la pregunta del examen correspondiente
+
+Código base sugerido para las gráficas:
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+import control
+
+# Definir la planta (ejemplo)
+num = [K]
+den = [tau1*tau2, tau1+tau2, 1]
+G = control.tf(num, den)
+
+# Con tiempo muerto (Padé de orden 2)
+num_pade, den_pade = control.pade(theta, 2)
+Gpade = control.tf(num_pade, den_pade)
+Gretardo = control.series(G, control.tf(num_pade, den_pade))
+```
+
+**BLOQUE 6 — RESPUESTAS** *(al final, separadas claramente)*
+Después de todas las preguntas y gráficas, agrega:
 
 ```
 ═══════════════════════════════════════
@@ -282,7 +319,7 @@ Después de todas las preguntas, agrega:
 Para cada pregunta:
 - Desarrollo matemático completo paso a paso
 - Resultado numérico con unidades
-- Interpretación física del resultado
+- Interpretación física del resultado (conectada con las gráficas generadas)
 - Trampa conceptual que el profesor suele evaluar
 - Puntos que se ganan/pierden según el desarrollo mostrado
 
