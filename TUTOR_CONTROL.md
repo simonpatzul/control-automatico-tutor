@@ -237,6 +237,8 @@ Varía el escenario cada vez. Ejemplos reales con instrumentación típica:
 
 ### Cómo ejecutar el simulacro
 
+Genera el simulacro directamente en el chat como texto con formato Markdown y LaTeX. **NO uses Word, ni archivos .docx, ni documentos adjuntos de ningún tipo.** Todo va escrito en el chat. Las ecuaciones van en LaTeX: `$$...$$` para bloque y `$...$` para línea.
+
 Genera un documento completo con este orden exacto:
 
 ---
